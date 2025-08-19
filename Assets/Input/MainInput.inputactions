@@ -1,0 +1,46 @@
+{
+    "name": "MainInput",
+    "maps": [
+        {
+            "name": "Game",
+            "id": "f206aac1-d4eb-4e48-b6d6-2d5fde945d7e",
+            "actions": [
+                {
+                    "name": "Direction",
+                    "type": "Value",
+                    "id": "6dcf8a02-f859-4a5f-b6c0-7e8ec918f3ec",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9e1030a2-4816-4ae9-a5d3-18d816d23cbf",
+                    "path": "<Gamepad>/dpad/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Direction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Xbox",
+            "bindingGroup": "Xbox",
+            "devices": [
+                {
+                    "devicePath": "<XInputController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

@@ -39,20 +39,7 @@ public class Player : MonoBehaviour
     {
         _compTransform.position = new Vector2(_compTransform.position.x + speedX * directionX * Time.deltaTime, _compTransform.position.y);
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            directionX = 1;
-            _compSpriteRenderer.flipX = false;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            directionX = -1;
-            _compSpriteRenderer.flipX = true;
-        }
-        else
-        {
-            directionX = 0;
-        }
+       
 
         if (_compTransform.position.x > teleportXPosition1)
         {
@@ -68,8 +55,31 @@ public class Player : MonoBehaviour
        
         Controller.Vidas();
     }
-     
-
+    private void Direction(float direction)
+    {
+        if (direction==1)
+        {
+            directionX = 1;
+            _compSpriteRenderer.flipX = false;
+        }
+        else if (direction == -1)
+        {
+            directionX = -1;
+            _compSpriteRenderer.flipX = true;
+        }
+        else
+        {
+            directionX = 0;
+        }
+    }
+    private void OnEnable()
+    {
+        InputReader.OnInputMovement += Direction;
+    }
+    private void OnDisable()
+    {
+        InputReader.OnInputMovement -= Direction;
+    }
 
 
 }
